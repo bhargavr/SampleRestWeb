@@ -1,0 +1,80 @@
+/*
+ * Style twaks
+ * --------------------------------------------------
+ */
+body {
+  padding-top: 70px;
+}
+footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/*
+ * Off Canvas
+ * --------------------------------------------------
+ */
+@media screen and (max-width: 768px) {
+  .row-offcanvas {
+    position: relative;
+    -webkit-transition: all 0.25s ease-out;
+    -moz-transition: all 0.25s ease-out;
+    transition: all 0.25s ease-out;
+  }
+
+  .row-offcanvas-right
+  .sidebar-offcanvas {
+    right: -50%; /* 6 columns */
+  }
+
+  .row-offcanvas-left
+  .sidebar-offcanvas {
+    left: -50%; /* 6 columns */
+  }
+
+  .row-offcanvas-right.active {
+    right: 50%; /* 6 columns */
+  }
+
+  .row-offcanvas-left.active {
+    left: 50%; /* 6 columns */
+  }
+
+  .sidebar-offcanvas {
+    position: absolute;
+    top: 0;
+    width: 50%; /* 6 columns */
+  }
+}
+
+/*box design*/
+.box{
+	border:2px solid #2E2EFE;
+	padding:10px 20px; 
+	background:#FFFFFF;
+	width:150px;
+	border-radius:25px;
+}
+.box_transperent{
+	border:0px solid #2E2EFE;
+	padding:10px 20px; 
+	width:150px;
+	border-radius:25px;
+}
+.radio.inline,
+.checkbox.inline {
+  display: inline-block;
+  padding-top: 5px;
+  margin-bottom: 0;
+  vertical-align: middle;
+}
+
+.radio.inline + .radio.inline,
+.checkbox.inline + .checkbox.inline {
+  margin-left: 10px;
+}
+input.span6,
+textarea.span6,
+.uneditable-input.span6 {
+  width: 446px;
+}

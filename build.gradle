@@ -1,0 +1,57 @@
+buildscript {
+    ext {
+        springBootVersion = '1.1.9.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:1.1.9.RELEASE")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse-wtp'
+apply plugin: 'idea'
+apply plugin: 'spring-boot' 
+apply plugin: 'war'
+
+war {
+    baseName = 'Sample Rest Web'
+}
+sourceCompatibility = 1.6
+targetCompatibility = 1.6
+
+repositories {
+    mavenCentral()
+}
+
+configurations {
+    providedRuntime
+}
+
+dependencies {
+	compile("org.springframework.boot:spring-boot-starter-thymeleaf")
+    compile("org.springframework.boot:spring-boot-starter-security")
+	providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
+    testCompile("org.springframework.boot:spring-boot-starter-test")
+    compile "org.json:json:20090211"
+    compile "joda-time:joda-time:2.1"
+    compile "commons-lang:commons-lang:2.6"
+    compile "mysql:mysql-connector-java:5.1.6"
+    compile "org.springframework:spring-jdbc:4.0.3.RELEASE"
+	compile "org.springframework:spring-tx:4.0.3.RELEASE"
+	compile "javax.inject:javax.inject:1"
+	compile "commons-fileupload:commons-fileupload:1.2"
+}
+
+eclipse {
+    classpath {
+         containers.remove('org.eclipse.jdt.launching.JRE_CONTAINER')
+         containers 'org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6'
+    }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.12'
+}
